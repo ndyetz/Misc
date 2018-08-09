@@ -1,2 +1,2 @@
 # Misc
-Miscellaneous code. Fun &amp; Consultation Projects
+Miscellaneous code that I have. Sometimes it is just me trying something new. I like to help people incorporate R into their work. Instance where I create lessons for people or I provide from statistical consultation for individual will be put in this repository. If I find that consultation becomes a regular thing for me, I will create a separate repository for that. In the mean time... MISC!

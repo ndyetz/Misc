@@ -1,0 +1,144 @@
+---
+title: "R Notebook For John"
+output:
+  pdf_document:
+    toc: yes
+  html_notebook:
+    toc: yes
+    toc_float: yes
+---
+
+#Load packages
+```{r, message = FALSE}
+#install.packages("randomForest")
+#install.packages("prediction")
+#install.packages("class")
+#install.packages("rpart")
+#install.packages("olsrr")
+#install.packages("broom")
+#install.packages("modelr")
+#install.packages("lme4")
+#install.packages("lmerTest")
+
+
+library(randomForest)
+library(prediction)
+library(class)
+library(rpart)
+library(olsrr) #John, load this package. It is way better for linear models. no need to separately get your confidence intervals!
+library(tidyverse) #Also, tidyverse is an essentail. makes manipulating and reading data a easy (takes a while to download)
+library(broom) #I forget what this is for! but use it anyways!
+library(modelr) #For hierarchical modeling
+library(lme4) #For Hierarchical modeling
+library(lmerTest) # <- gives hierarchical modeling p-values (There is a reason it's NOT with lme4)
+
+
+
+```
+
+#Load data
+```{r, message = FALSE}
+X2017_All <- read_csv("John Dataset.csv") # <-  from tidyverse package
+```
+#Summary stats
+```{r}
+
+#check for outliers and set filter for interquartiles for one model
+summary(X2017_All)
+```
+
+#Charge_Day Histogram
+```{r}
+ggplot(data = X2017_All, aes(x = Charge_Day)) +
+  geom_histogram(binwidth = 1)
+```
+
+#Charge Week Histogram
+```{r}
+ggplot(data = X2017_All, aes(x = Charge_Week)) +
+  geom_histogram(binwidth = 1)
+
+```
+
+
+#Non-standardized model
+We don't need to standardize this because R does this for us! Keep it regular! 
+```{r}
+#######################################################################
+###Main Model, seems to be working best when I don't remove outliers###
+#######################################################################
+All<- lm(Charge_Day ~  Day_Number+ Week_Number  + Charge_Week , data = X2017_All)
+ols_regress(All) # <- from olsrr
+#summary(All)
+#confint(All)
+
+  
+```
+
+```{r}
+#######################################################################
+###Main Model, seems to be working best when I don't remove outliers###
+#######################################################################
+All<- lm(CDZ ~  Day_Number+ Week_Number  + CWZ , data = X2017_All)
+ols_regress(All) # <- from olsrr
+#summary(All)
+#confint(All)
+
+  
+```
+
+```{r}
+ggplot(data = X2017_All, aes(x = CWZ, y = CDZ)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+
+```{r}
+ggplot(data = X2017_All, aes(x = Charge_Week, y = Charge_Day)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+#correlation
+Proof you don't need to standardize
+```{r}
+cor(X2017_All$Charge_Day, X2017_All$Charge_Week)
+cor(X2017_All$CDZ, X2017_All$CWZ)
+
+```
+
+#Let's try hierarchical modeling...
+
+```{r}
+
+
+X2017_All <- X2017_All %>% 
+  arrange(Week_Number, Day_Number) %>% 
+  mutate(week.f = factor(Week_Number),
+         day.f = factor(Day_Number), 
+         provider.f = factor(Provider_Name)) %>% 
+  arrange(Provider_Name, Week_Number, Day_Number)
+```
+
+#Fixed effects only
+```{r}
+mod1 = lmer(Charge_Day ~ 1 + Charge_Week + (1|provider.f), REML = TRUE, data = X2017_All)
+summary(mod1)
+```
+
+#include week & day as fixed effects
+This is a large dataset... it might take a while
+```{r}
+mod2 = lmer(Charge_Day ~ 1 + Charge_Week + Week_Number + Day_Number +(1|provider.f), REML = TRUE, data = X2017_All)
+summary(mod2)
+```
+
+
+
+
+#Problem with this model....
+```{r}
+mod3 = lmer(Charge_Day ~ 1 + Charge_Week + Week_Number + Day_Number +(1+ Charge_Week |provider.f), REML = TRUE, data = X2017_All)
+summary(mod3)
+```

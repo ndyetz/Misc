@@ -1,0 +1,209 @@
+---
+title: "R Lesson for Julie"
+output: 
+  html_notebook:
+    toc: true
+---
+
+Hi Julie! Welcome to R-Notebooks! Get ready for some **R**ad leaRning!
+
+R-notebooks are different than normal R because they allow you to generate reports that have "chunks" of R-code and will display the result directly below the code. Don't believe me? Press *Ctrl + alt + R*, all of your R "Chunks" will run! Press the 'Preview' button to the right of the save button! and HTML version of your code will open up. 
+
+Okay, let's get some learning in da house!
+
+
+To start. let's learn about the the **BEST** package for Data importing, cleaning & manipulating. This package is called the "tidyverse" package. It is technically a package of packages. when you load up this package you are loading up 10+ packages - Which are all vital for setting up date for whatever analyses you want to run. Look, maybe don't follow my advice, but it's literally the first thing I do every time I create an R-notebook. it's so vital.
+
+
+Let's Load it up, and we get to see your first "R-Chunk"! 
+
+#Load tidyverse
+Btw, see where I put that "#" above? That's me creating a header, when you create reports, they turn into large headings so people know what you are doing. 
+Now look below! That grey part is called an "R-chunk"! you can create it by clicking the "insert" drop down menu and then clicking "R". 
+
+```{r}
+#Within here is where we enter R code!!!
+#See how the "#" now works as commenting things out?!?! That's because it is the same as working in an R-script!!!
+
+#So, let's install the "tidyverse" package
+#install.packages("tidyverse") # <- this code installs packages, the package you're referencing needs to be in "quotes"! you only need to do this once!
+
+library(tidyverse) # <- this loads the package for the session! You need to do this every session!
+
+
+#If you want to run this chink you can press the "play button" on the upper right hand of the box or click "Ctrl + shift + enter"
+
+```
+
+
+Now, Would you look at that. We're out of R again! Now I can write whatever notes I want. Btw, in this white space you're actually able o use another language called "Markdown". If you learn Markdown you can utilize it to make your reports _**CRAZY PRETTY**_ (I just *italicized* and **bolded** "Crazy pretty"" there. Press "Preview" and you'll see it in action!)
+
+#Reading in data
+
+Alright, Let's load up your data. I noticed you gave me a **.sav** file. Let's load her up! To load files like these (i.e ones that aren't .csv files) We use a special package called the "haven" package. So we are going to install and load that library hear to.
+
+From the haven package there is a function to read in .sav files we use a function called, read_spss() and we'll use this within the r-chunk. Usually you need to designate the filepath... but we're smart and we use something called "R-projects" (an ".Rproj" file). For this lesson I created an .Rproj file called "Julie.Rproj" this designates a filepath for this R-session. We don't need to use setwd() when we have r-projects! It makes collaborating a breeze!
+
+Alright! Let's do it! Another R-chunk is below.
+
+
+```{r}
+
+#install.packages("haven")
+library(haven)
+
+julies_data <- read_spss("Judicial_Decision_Making_in_Civil_and_Domestic_Courts.sav") 
+
+#Hooray! we loaded in your data! 
+
+
+
+```
+
+Now, look at your "Global Environment" an 'object' called "julies_data" should be there. It will tell you how many observations and variables are in the dataset. Click on it to view it. 
+
+##A note on the "read_spss()" function
+
+Although R is amazing and can read SPSS data with a breeze... I want you to be aware that it may give you problems from time to time. The haven package uses a format called "labelled" when reading in SPSS files. This is because it keeps the variable name and the associated label name for the variable (Look at the data set, it's there!). Many functions and packages work well with this variable type... but not all and it may cause problems in the future, so be aware. Whenever possible, get your data in .csv format. It is the best best best *best* format to read in data (and you'll use the "read_csv() function from tidyverse... not read.csv() and there are reasons why!). 
+
+#tidyverse in action
+##The tidyverse "verbs"
+
+Okay. This is where the tidyverse gets amazing. Now we can summarize, manipulate, filter, and select variable within our dataset. tidyverse uses a series of "verbs" which are functions that are easy to work with.
+
+The main verbs you will be working with are: 
+
+- select()
+- filter()
+- mutate()
+- summarize()
+
+These are specific to the dataset and use a different method for idenitifying variables within your dataset. Remember how you had to use the "$" to work with variables in a dataset? NOT ANYMORE YOU DON'T! these verbs have a very specific way of looking at your data. The first "argument" (arguments = commands within the functions) for all of these verbs is the dataset you are working with. Then, you can just tick away with variable names and so forth. 
+
+Let's Go through each of our verbs. 
+
+###select()
+
+select() "selects" *variables* in a dataset. Let's try it out! 
+
+Looking at your dataset I want only certain variables. Let's bring your dataset down to 3 variables. We'll take: "Condition", "GenderParent" & "Q74".  Remember the first argument is the dataset we're working with.
+
+```{r}
+
+select_example <- select(julies_data, Condition, GenderParent, Q74)
+
+```
+
+
+Look at your global environment, you have an 'object' called "select_example" now. It only has the 3 variables we listed. See how that worked? 
+
+Here's the format: *select(**data frame**, all, of, the, variables, you, want, separated, by, commas)*
+
+No dollar signs, no quotations. tidyverse is smart, it knows exactly what you are trying to do. 
+
+There are a lot of shortcuts for this to. I'd really advise you to read on them. 
+
+Here, I'll help. The R-chunk below is how you get information on packages and functions. you just use a "?"
+
+```{r}
+?select # <- An informational sheet will pop up in the help window.
+```
+
+
+###filter()
+
+filter() "filters" the the rows (aka observations) we specifically want. 
+
+I noticed you have seperate conditions. let's filter and create a few different datasets based on those. 
+
+Again, the first argument is your dataframe. Then we have to tell it how to filter. This requires the use of "logical operators" Which I will list below. 
+
+Your logical operators are: 
+ 
+- ` ==   Which means "Is exactly equal to"
+- ` !=   Which means "Is NOT equal to"
+- ` >   Which means "Is greater than"
+- ` <    Which means "Is less than"
+- ` >=   Which means "Is greater than OR equal to"
+- ` <=   Which means "Is less than OR equal to"
+
+- ` is.na()   Which means "Contains an NA value" missing data is handled differently. I'll try to show an example below.
+- ` !is.na()  Which means "Does NOT contain an NA value"
+
+- ` %% - is called a "modulo", which means "Has a remainder of" (It's not used as much, but is actually very userful)
+
+You need these to tell tidyverse how to filter your variables. 
+
+*Just a note* notice how "=" is not a logical operator, yeah, it's get's confusing, but never use a single equal sign in a filter function.
+
+
+Let's put a few of these of these to the test!
+
+```{r}
+#Let's get condition 1
+cond_1 <- filter(julies_data, Condition == 1)
+
+#Let's get everything EXCEPT conition 1
+cond_not_1 <- filter(julies_data, Condition != 1)
+
+#Condition greater than 5
+cond_great_5 <- filter(julies_data, Condition > 5)
+
+#condition less than OR equal to 8
+cond_lesseq_8 <- filter(julies_data, Condition <= 8)
+
+#Want to filter by text values? Easy! Just use quotes! I'l filter on the "DebtRationale" variable for fun.
+text_filter <- filter(julies_data, DebtRationale == "they collected it together")
+
+#Let's filter by NA values... The weird one. We'll see how many didn't write a response for the "cONGRUITY" variable
+NAs_only <- filter(julies_data, is.na(cONGRUITY)) # <- the variable goes with the "is.na()" function
+
+#Let's see how many are NOT NA in the "cONGRUITY" variable.
+no_NAs <- filter(julies_data, !is.na(cONGRUITY))
+
+
+```
+
+Theres the filter function! Just like the select function, there is a lot more... For example, if you use a "&" Then you can say things like "filter(data, var > 3 & var < 7)" which will give you values between 3 and 7. Or the "|" is equivalant to "or" which can be used like "filter(data, var == 9 | var == 15) will give you rows that the values are 9 or 15. 
+
+###mutate()
+
+mutate() "mutates" variables to get you something something interesting. You can use this to rename variables, factor variables, do simple math calculations, etc. etc. Here, you'll be using the "=" sign. The "=" sign is telling the mutate function you want to create a new variable. You can even just set it to 1 value  I'll show you the general outline for the mutate function.
+
+*mutate(data, NewVariable = OldVariable mutation instructions)*
+
+you're creating a new variable and giving the function instructions of what that new variable should be. It's best showed by example. 
+
+To start, I am going to create a subset of your data so it'll be easier. I'll call it "small_data"
+
+```{r}
+#creating subset of data
+small_data <- select(julies_data, Condition, CongruityDad, CongruityMom, JCheerful, JIntelligent)
+
+
+#Lets create a new variable called "MomDad" where we add the mom and dad congruity scores. we'll keep it in the same dataset.
+small_data <- mutate(small_data, MomDad = CongruityDad + CongruityMom) #Simple addition
+
+#Now let's get the difference of JCheerful and JIntelligent we'll call it "DiffCI"
+small_data <- mutate(small_data, DiffCI = JCheerful - JIntelligent)
+
+#Multiplication and division work too! 
+small_data <- mutate(small_data, multCI = JCheerful * JIntelligent)
+small_data <- mutate(small_data, divCI = JCheerful / JIntelligent)
+
+#Wanna exponentiate something? Just use "**" Let's square something! 
+small_data <- mutate(small_data, square_cheer = JCheerful**2)
+
+#Then Cube it!
+small_data <- mutate(small_data, cube_cheer = JCheerful**3)
+
+#Okay, How about get a z-score? Now we're getting complex! remember, Z-score = (X - mean) / sd. This can all be done in the mutate function!
+#We'll get each observations z-score for the intelligent variable
+small_data <- mutate(small_data, zintelligent = (JIntelligent - mean(JIntelligent, na.rm = TRUE) / sd(JIntelligent, na.rm = TRUE)))
+
+#Notice How I used the mean() and sd() functions in the last example. read up on those using ?mean and ?sd
+
+```
+
+
+
