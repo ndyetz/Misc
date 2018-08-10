@@ -76,6 +76,7 @@ The main verbs you will be working with are:
 - select()
 - filter()
 - mutate()
+- arrange()
 - summarize()
 
 These are specific to the dataset and use a different method for idenitifying variables within your dataset. Remember how you had to use the "$" to work with variables in a dataset? NOT ANYMORE YOU DON'T! these verbs have a very specific way of looking at your data. The first "argument" (arguments = commands within the functions) for all of these verbs is the dataset you are working with. Then, you can just tick away with variable names and so forth. 
@@ -164,11 +165,11 @@ no_NAs <- filter(julies_data, !is.na(cONGRUITY))
 
 ```
 
-Theres the filter function! Just like the select function, there is a lot more... For example, if you use a "&" Then you can say things like "filter(data, var > 3 & var < 7)" which will give you values between 3 and 7. Or the "|" is equivalant to "or" which can be used like "filter(data, var == 9 | var == 15) will give you rows that the values are 9 or 15. 
+Theres the filter function! Just like the select function, there is a lot more... For example, if you use a "&", then you can say things like "filter(data, var > 3 & var < 7)" which will give you values between 3 and 7. Or the "|" is equivalant to "or" which can be used like "filter(data, var == 9 | var == 15) will give you rows that the values are 9 or 15. 
 
 ###mutate()
 
-mutate() "mutates" variables to get you something something interesting. You can use this to rename variables, factor variables, do simple math calculations, etc. etc. Here, you'll be using the "=" sign. The "=" sign is telling the mutate function you want to create a new variable. You can even just set it to 1 value  I'll show you the general outline for the mutate function.
+mutate() "mutates" variables to get you something interesting. You can use this to rename variables, factor variables, do simple math calculations, etc. etc. Here, you'll be using the "=" sign. The "=" sign is telling the mutate function you want to create a new variable. You can even just set it to 1 value  I'll show you the general outline for the mutate function.
 
 *mutate(data, NewVariable = OldVariable mutation instructions)*
 
