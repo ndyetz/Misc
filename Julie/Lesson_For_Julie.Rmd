@@ -29,6 +29,11 @@ Let's Load it up, and we get to see your first "R-Chunk"!
 Btw, see where I put that "#" above? That's me creating a header, when you create reports, they turn into large headings so people know what you are doing. 
 Now look below! That grey part is called an "R-chunk"! you can create it by clicking the "insert" drop down menu and then clicking "R". 
 
+
+
+
+
+
 ```{r, message = FALSE, warning = FALSE}
 #Within here is where we enter R code!!!
 #See how the "#" now works as commenting things out?!?! That's because it is the same as working in an R-script!!!
@@ -346,6 +351,7 @@ I experimented with the tm package a little bit. Let's see if I can help...
 ```{r}
 #install.packages("tm")
 library(tm)
+
 ```
 
 
