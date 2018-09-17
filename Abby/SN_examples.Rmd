@@ -1,0 +1,70 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```{r}
+library(visNetwork)
+library(igraph)
+library(stringr)
+library(tidyverse)
+```
+
+
+```{r}
+networks <-  readRDS("T:/Research folders/CCWTG/Data/MERGEALL/ALL_NETWORKS.RDS")
+```
+
+
+```{r, fig.width=10, fig.height=10}
+
+
+el <- as_edgelist(networks$F15$monday$graphs$g1)
+visnet <- toVisNetworkData(graph_from_edgelist(el, directed = TRUE))
+
+
+visnet$nodes <-visnet$nodes %>% 
+  mutate(group = ifelse(str_detect(id, "M") == TRUE, "Staff", "Youth"))
+
+
+visgraph1 <- visNetwork(nodes = visnet$nodes, edges = visnet$edges, main = "CC social network", submain = "Monday - Week 1", footer = "select by staff and youth") %>% 
+  visLegend() %>% 
+  visGroups(groupname = "Staff", color = "red") %>% 
+  visGroups(groupname = "Youth", color = "blue") %>% 
+   visOptions(selectedBy = "group") %>% 
+  visInteraction(navigationButtons = TRUE)
+
+visgraph1
+
+
+```
+
+
+```{r}
+
+el <- as_edgelist(networks$F16$monday$graphs$g1)
+visnet <- toVisNetworkData(graph_from_edgelist(el, directed = TRUE))
+
+
+visnet$nodes <-visnet$nodes %>% 
+  mutate(group = ifelse(str_detect(id, "M") == TRUE, "Staff", "Youth"))
+
+
+visgraph2 <- visNetwork(nodes = visnet$nodes, edges = visnet$edges, main = "CC social network", submain = "", footer = "select by staff and youth") %>% 
+  visLegend() %>% 
+  visGroups(groupname = "Staff", color = "red") %>% 
+  visGroups(groupname = "Youth", color = "blue") %>% 
+   visOptions(selectedBy = "group") %>% 
+  visInteraction(navigationButtons = TRUE)
+
+visgraph2
+
+```
+
+
+
+
+
