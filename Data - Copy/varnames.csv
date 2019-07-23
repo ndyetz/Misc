@@ -1,0 +1,58 @@
+varname,Orig_name,Orig_resp
+Respondent ID,Respondent ID,
+Collector_ID,Collector ID,
+Start_Date,Start Date,
+End_Date,End Date,
+Custom_Data_0,Custom Data 1,
+consent,Would you like to participate in this survey? Please select yes or no and click next.,Response
+role,"Which of the following best describes your current role in your school district or charter school system (referred to as a local education agency, or LEA)?Please select only one answer.",Response
+years,"In total, how many years have you served in this role for this LEA? Please provide a number in the box below.",Open-Ended Response
+class_size,"Including all schools, approximately, how many K-12 students were enrolled in your LEA in school year 2018-19?Please select only one answer.",Response
+board_meets,How many school board meetings have you attended during the 2018-19 school year (including only full school board meetings that are open to the public)?Please select only one answer.,Response
+topics_a,"Thinking about the school board meetings in which you have participated this school year (2018-19), how often did your school board focus on the following topic areas or activities?Please select one answer in each row.",a. Discuss or decide issues related to school facilities
+topics_b,,b. Discuss or decide issues related to LEA budget or finances
+topics_c,,"c. Discuss or decide issues related to academics (curriculum, program offerings, etc.)"
+topics_d,,d. Discuss or decide issues related to staff recruitment and retention
+topics_e,,e. Review or adopt LEA personnel policies
+topics_f,,"f. Track, monitor, or evaluate progress toward meeting the LEA's student outcome goals"
+topics_g,,g. Hear public testimony
+vision,Has your school board developed and adopted a vision for the LEA?Please select only one answer.,Response
+goals,Has your school board adopted goals related to student outcomes that are currently being used?Please select only one answer.,Response
+goals_text,How many goals related to student outcomes does your school board have in place for the 2018-19 school year? Please provide a number in the box below.,Open-Ended Response
+goal_ex_1,"In the text boxes below, please provide examples of two of the goals related to student outcomes that the school board has in place for the 2018-19 school year.",Example One:
+goal_ex_2,,Example Two:
+public_goals,"Thinking about the total amount of time spent in all Board-authorized public meetings together in 2018-19, approximately what percentage of time has been spent setting or monitoring goals related to student outcomes?Please select only one answer.",Response
+board_goals,What is your assessment of the amount of time your school board has spent setting and/or monitoring goals related to student outcomes in 2018-19?Please select only one answer.,Response
+super_goals,"In 2018-19, to what extent is the superintendent's performance evaluation based on the LEA's progress on achieving student outcome goals?",Response
+stak_goals_SA,"In 2018-19, to what extent have the following groups of stakeholders provided input to the school board regarding development of goals or vision?",a. School Administrators
+stak_goals_LEA,,b. LEA Administrators
+stak_goals_T,,c. Teachers
+stak_goals_IC,,d. Instructional Coaches
+stak_goals_P,,e. Parents
+stak_goals_CM,,f. Community Members
+stak_goals_S,,g. Students
+stak_goals_Oth,,h. Other (please specify in box below)
+Oth_stak_goals_TEXT,,"If selected ""Other,"" please specify:"
+agree_hondisc,To what extent do you agree or disagree with the following statements regarding school board discussions?Please select one answer in each row.,a. Our school board meetings encourage honest discussion among members.
+agree_resp,,b. Our discussions are respectful of differences of opinion.
+agree_partic,,"c. In public meetings, community members participate in board meetings in constructive ways."
+engage_stud,How often does your school board engage in the following monitoring activities?Please select one answer in each row.,a. Assess progress towards meeting your LEA's goals related to student outcomes
+engage_super,,b. Assess performance evaluation criteria or metrics for the LEA's superintendent
+engage_prog,,c. Distribute progress reports related to student outcomes reported to the Board
+proc_stud,To what extent do you agree or disagree with the following statements about operating procedures of the school board and superintendent?Please select one answer in each row.,a. The Board fosters two-way communication with students about its vision.
+proc_pare,,b. The Board fosters two-way communication with parents and community members about its vision.
+proc_boar,,c. The relationship between the Board and Superintendent is collaborative.
+proc_dele,,d. The Board delegates to the Superintendent operational authority to accomplish the vision and student outcome goals.
+proc_advi,,e. It is appropriate for Board Members to give operational advice or instructions to staff members.
+proc_law,,f. The Board maintains local policies beyond those required by law.
+proc_prior,,"g. Some of our Board Member(s) may prioritize loyalty to staff or vendors over community, the vision, and improving student outcomes."
+LSG_comp,Have you completed the Lone Star Governance (LSG) workshop training?Please select only one answer.,Response
+num_train,How many school board members from your LEA have received training on LSG?Please select only one answer. ,Response
+agree_impr,To what extent do you agree or disagree with the following statements regarding LSG?Please select one answer in each row.,a. The LSG workshop improved school board effectiveness.
+agree_enga,,b. The LSG workshop was engaging.
+agree_focu,,c. The LSG workshop encouraged our school board to think critically about our own activities and focus.
+agree_time,,d. The LSG workshop was a good use of my time.
+agree_unde,,e. I have a strong understanding of the LSG framework.
+agree_incr,,f.LSG has increased the amount of time our school board focuses on student outcomes.
+agree_help,,g.My LEA's LSG coach helped our school board implement the components of Lone Star Governance.
+agree_recommend,,h.I would recommend that other school board members participate in LSG.
