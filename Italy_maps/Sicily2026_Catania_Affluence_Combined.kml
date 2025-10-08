@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+    <name>Catania Affluence & Income</name>
+
+    <Placemark>
+        <name>Municipio 1</name>
+        <description>Municipi Affluence Proxy — Lower: Lower employment; higher NEET/early-school-leaving (proxy).</description>
+        <Point><coordinates>15.082,37.489,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Municipio 2</name>
+        <description>Municipi Affluence Proxy — Higher: Higher % upper-secondary education; stronger employment (proxy).</description>
+        <Point><coordinates>15.068,37.526,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Municipio 3</name>
+        <description>Municipi Affluence Proxy — Higher: Highest employment rate among municipi (proxy).</description>
+        <Point><coordinates>15.082,37.539,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Municipio 4</name>
+        <description>Municipi Affluence Proxy — Mid: Mixed indicators; intermediate profile (proxy).</description>
+        <Point><coordinates>15.093,37.517,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Municipio 5</name>
+        <description>Municipi Affluence Proxy — Mid: Mixed indicators; intermediate profile (proxy).</description>
+        <Point><coordinates>15.107,37.503,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Municipio 6</name>
+        <description>Municipi Affluence Proxy — Lower: Lower employment; higher NEET/early-school-leaving (proxy).</description>
+        <Point><coordinates>15.104,37.476,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Catania (City)</name>
+        <description>Metro Income Ring — Baseline: Reference point for city-level income.</description>
+        <Point><coordinates>15.09,37.503,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Aci Castello</name>
+        <description>Metro Income Ring — Higher: Higher declared income vs. city baseline (proxy).</description>
+        <Point><coordinates>15.1454,37.5556,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>San Gregorio di Catania</name>
+        <description>Metro Income Ring — Higher: Affluent commuter town (proxy).</description>
+        <Point><coordinates>15.098,37.562,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Tremestieri Etneo</name>
+        <description>Metro Income Ring — Higher: Residential area with above-baseline incomes (proxy).</description>
+        <Point><coordinates>15.065,37.556,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Sant’Agata Li Battiati</name>
+        <description>Metro Income Ring — Higher: Affluent comune north of Catania (proxy).</description>
+        <Point><coordinates>15.078,37.551,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Misterbianco</name>
+        <description>Metro Income Ring — Mid: Large comune; mixed profile (proxy).</description>
+        <Point><coordinates>15.0,37.512,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Gravina di Catania</name>
+        <description>Metro Income Ring — Mid: Residential belt; near median (proxy).</description>
+        <Point><coordinates>15.064,37.541,0</coordinates></Point>
+    </Placemark>
+    
+    <Placemark>
+        <name>Acireale</name>
+        <description>Metro Income Ring — Mid: Historic coastal comune; mixed profile (proxy).</description>
+        <Point><coordinates>15.164,37.615,0</coordinates></Point>
+    </Placemark>
+    </Document></kml>

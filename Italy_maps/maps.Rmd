@@ -1,0 +1,79 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(sf)
+library(maps)
+library(plotly)
+```
+
+
+```{r, message = FALSE, warning = FALSE}
+italy <- map_data("italy")
+
+catania <- italy %>% 
+  filter(region == "Catania")
+
+catania_crime <- read_csv("Sicily2026_Catania_IncomeCrime_ONE.csv")
+```
+
+```{r}
+# Plot the base map
+italy_map <- ggplot() +
+  geom_polygon(data = italy, aes(x = long, y = lat, group = group), fill = "white", color = "lightgrey") + 
+    geom_polygon(data = italy, aes(x = long, y = lat, group = region), fill = NA, color = NA) + 
+
+  geom_polygon(data = catania, aes(x = long, y = lat, group = region), fill = "red", color = "red") +
+  #geom_point(data = catania_crime, aes(x = Longitude, y = Latitude, group = CrimeTier, color = CrimeTier)) +
+  coord_map() +
+  theme_void()# +
+ # labs(title = "Italy Base Map")
+
+ggplotly(italy_map)
+```
+
+```{r}
+catania_crime <- catania_crime %>% 
+  filter(IncomeTier != "Baseline") %>% 
+  mutate(visitability = factor(StyleKey, levels = c(
+                                                    "Income=Higher | Crime=Lower", 
+                                                    "Income=Mid | Crime=Lower",
+                                                    "Income=Mid | Crime=Mid",
+                                                    "Income=Lower | Crime=Mid",
+                                                    "Income=Lower | Crime=Higher"),
+                              labels = c(1,2,3,4,5)
+                                                   ),
+visitability = factor(visitability, labels = c(
+                                                    "Income=Higher | Crime=Lower", 
+                                                    "Income=Mid | Crime=Lower",
+                                                    "Income=Mid | Crime=Mid",
+                                                    "Income=Lower | Crime=Mid",
+                                                    "Income=Lower | Crime=Higher"),
+                              levels = c(1,2,3,4,5)
+                                                   )
+)
+```
+
+
+
+```{r}
+# Plot Catania are only
+catania_map <- ggplot() +
+  
+  geom_polygon(data = catania, aes(x = long, y = lat, group = group), fill = "white", color = "lightgrey") +
+  #geom_point(data = catania_crime, aes(x = Longitude, y = Latitude, group = CrimeTier, color = CrimeTier)) +
+  #geom_point(data = catania_crime, aes(x = Longitude, y = Latitude, group = IncomeTier, color = IncomeTier)) +
+  geom_point(data = catania_crime, aes(x = Longitude, y = Latitude, group = Name, color = visitability)) +
+  coord_map() +
+  theme_void() +
+ labs(title = "Catania Region") +
+ scale_color_manual(values = colorRampPalette(c("darkgreen", "red"))(5)) 
+```
+
+```{r}
+ggplotly(catania_map)
+```
+

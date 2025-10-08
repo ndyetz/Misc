@@ -1,0 +1,15 @@
+Name,AreaType,City,Latitude,Longitude,IncomeTier,CrimeTier,StyleKey,Notes
+Municipio 1,Municipio,Catania,37.489,15.082,Lower,Mid,Income=Lower | Crime=Mid,Central/old-town areas; mixed conditions; tourist petty theft risk; some 'zone rosse' enforcement nearby (Proxy indicators; not official neighborhood-level stats.)
+Municipio 2,Municipio,Catania,37.526,15.068,Higher,Lower,Income=Higher | Crime=Lower,Higher education/employment shares within city context (Proxy indicators; not official neighborhood-level stats.)
+Municipio 3,Municipio,Catania,37.539,15.082,Higher,Lower,Income=Higher | Crime=Lower,Highest employment rate among municipi (proxy) (Proxy indicators; not official neighborhood-level stats.)
+Municipio 4,Municipio,Catania,37.517,15.093,Mid,Mid,Income=Mid | Crime=Mid,Mixed socio-economic indicators (Proxy indicators; not official neighborhood-level stats.)
+Municipio 5,Municipio,Catania,37.503,15.107,Mid,Mid,Income=Mid | Crime=Mid,Mixed socio-economic indicators (Proxy indicators; not official neighborhood-level stats.)
+Municipio 6,Municipio,Catania,37.476,15.104,Lower,Higher,Income=Lower | Crime=Higher,Includes Librino; recurrent policing/press focus (Proxy indicators; not official neighborhood-level stats.)
+Catania (City),Comune,Catania,37.503,15.09,Baseline,Mid,Income=Baseline | Crime=Mid,City-wide reference point (Proxy indicators; not official neighborhood-level stats.)
+Aci Castello,Comune,Aci Castello,37.5556,15.1454,Higher,Lower,Income=Higher | Crime=Lower,"Coastal, higher declared income historically (proxy) (Proxy indicators; not official neighborhood-level stats.)"
+San Gregorio di Catania,Comune,San Gregorio di Catania,37.562,15.098,Higher,Lower,Income=Higher | Crime=Lower,Affluent commuter comune (proxy) (Proxy indicators; not official neighborhood-level stats.)
+Tremestieri Etneo,Comune,Tremestieri Etneo,37.556,15.065,Higher,Lower,Income=Higher | Crime=Lower,Residential; above-baseline incomes (proxy) (Proxy indicators; not official neighborhood-level stats.)
+Sant’Agata Li Battiati,Comune,Sant’Agata Li Battiati,37.551,15.078,Higher,Lower,Income=Higher | Crime=Lower,"Small, affluent comune (proxy) (Proxy indicators; not official neighborhood-level stats.)"
+Misterbianco,Comune,Misterbianco,37.512,15.0,Mid,Mid,Income=Mid | Crime=Mid,Large comune; mixed profile (proxy) (Proxy indicators; not official neighborhood-level stats.)
+Gravina di Catania,Comune,Gravina di Catania,37.541,15.064,Mid,Mid,Income=Mid | Crime=Mid,Residential belt; near median (proxy) (Proxy indicators; not official neighborhood-level stats.)
+Acireale,Comune,Acireale,37.615,15.164,Mid,Lower,Income=Mid | Crime=Lower,Historic coastal comune; generally calmer (proxy) (Proxy indicators; not official neighborhood-level stats.)

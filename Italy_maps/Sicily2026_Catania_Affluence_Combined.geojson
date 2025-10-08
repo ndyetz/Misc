@@ -1,0 +1,229 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.082,
+          37.489
+        ]
+      },
+      "properties": {
+        "Name": "Municipio 1",
+        "Category": "Lower",
+        "Notes": "Lower employment; higher NEET/early-school-leaving (proxy).",
+        "Layer": "Municipi Affluence Proxy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.068,
+          37.526
+        ]
+      },
+      "properties": {
+        "Name": "Municipio 2",
+        "Category": "Higher",
+        "Notes": "Higher % upper-secondary education; stronger employment (proxy).",
+        "Layer": "Municipi Affluence Proxy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.082,
+          37.539
+        ]
+      },
+      "properties": {
+        "Name": "Municipio 3",
+        "Category": "Higher",
+        "Notes": "Highest employment rate among municipi (proxy).",
+        "Layer": "Municipi Affluence Proxy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.093,
+          37.517
+        ]
+      },
+      "properties": {
+        "Name": "Municipio 4",
+        "Category": "Mid",
+        "Notes": "Mixed indicators; intermediate profile (proxy).",
+        "Layer": "Municipi Affluence Proxy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.107,
+          37.503
+        ]
+      },
+      "properties": {
+        "Name": "Municipio 5",
+        "Category": "Mid",
+        "Notes": "Mixed indicators; intermediate profile (proxy).",
+        "Layer": "Municipi Affluence Proxy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.104,
+          37.476
+        ]
+      },
+      "properties": {
+        "Name": "Municipio 6",
+        "Category": "Lower",
+        "Notes": "Lower employment; higher NEET/early-school-leaving (proxy).",
+        "Layer": "Municipi Affluence Proxy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.09,
+          37.503
+        ]
+      },
+      "properties": {
+        "Name": "Catania (City)",
+        "Category": "Baseline",
+        "Notes": "Reference point for city-level income.",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.1454,
+          37.5556
+        ]
+      },
+      "properties": {
+        "Name": "Aci Castello",
+        "Category": "Higher",
+        "Notes": "Higher declared income vs. city baseline (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.098,
+          37.562
+        ]
+      },
+      "properties": {
+        "Name": "San Gregorio di Catania",
+        "Category": "Higher",
+        "Notes": "Affluent commuter town (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.065,
+          37.556
+        ]
+      },
+      "properties": {
+        "Name": "Tremestieri Etneo",
+        "Category": "Higher",
+        "Notes": "Residential area with above-baseline incomes (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.078,
+          37.551
+        ]
+      },
+      "properties": {
+        "Name": "Sant’Agata Li Battiati",
+        "Category": "Higher",
+        "Notes": "Affluent comune north of Catania (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.0,
+          37.512
+        ]
+      },
+      "properties": {
+        "Name": "Misterbianco",
+        "Category": "Mid",
+        "Notes": "Large comune; mixed profile (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.064,
+          37.541
+        ]
+      },
+      "properties": {
+        "Name": "Gravina di Catania",
+        "Category": "Mid",
+        "Notes": "Residential belt; near median (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.164,
+          37.615
+        ]
+      },
+      "properties": {
+        "Name": "Acireale",
+        "Category": "Mid",
+        "Notes": "Historic coastal comune; mixed profile (proxy).",
+        "Layer": "Metro Income Ring"
+      }
+    }
+  ]
+}
