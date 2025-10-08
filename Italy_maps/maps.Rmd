@@ -77,3 +77,42 @@ catania_map <- ggplot() +
 ggplotly(catania_map)
 ```
 
+```{r}
+ai_shape <- st_read("C:/Users/ndyet/Git/Misc/Italy_maps/Catania_Quartieri_IncomeCrime_POLY/Catania_Quartieri_IncomeCrime_POLY.shp")
+```
+```{r}
+ai_map <- ggplot() +
+  geom_polygon(data = catania, aes(x = long, y = lat, group = group), fill = "white", color = "lightgrey") +
+  geom_sf(data = ai_shape, aes(fill = crime_tier, group = municipio), color = "grey") + # Counties
+ # geom_sf(data = sf_zip_reduce_pol, fill = 'lightblue', color = 'lightblue') +#Surveyed zip codes
+ # geom_sf(data = states_pol, fill = NA, color = "black", linewidth = 1) + # State Lines
+#  labs(title = "2022 RBSA Encachment Area", 
+ #      caption = "Source: 2020 US Census & 2022 RBSA survey") +
+  theme_void() 
+```
+
+```{r}
+ggplotly(ai_map)
+```
+
+```{r}
+ai_shape2 <- st_read("C:/Users/ndyet/Git/Misc/Italy_maps/Sicily2026_POLYGONS/Sicily2026_POLYGONS.shp")
+
+```
+```{r}
+ai_map2 <- ggplot() +
+  geom_polygon(data = catania, aes(x = long, y = lat, group = group), fill = "white", color = "lightgrey") +
+ # geom_sf(data = ai_shape2, aes(fill = crime_idx, group = municipio), color = "grey") + # Counties
+  geom_sf(data = ai_shape2, aes(fill = as.factor(night_idx), group = crime_idx), color = "grey") + # Counties
+
+ # geom_sf(data = sf_zip_reduce_pol, fill = 'lightblue', color = 'lightblue') +#Surveyed zip codes
+ # geom_sf(data = states_pol, fill = NA, color = "black", linewidth = 1) + # State Lines
+#  labs(title = "2022 RBSA Encachment Area", 
+ #      caption = "Source: 2020 US Census & 2022 RBSA survey") +
+  theme_void() 
+```
+
+```{r}
+ggplotly(ai_map2)
+```
+
